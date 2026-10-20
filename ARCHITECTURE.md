@@ -7,6 +7,46 @@ The queue backend owns task placement. The core engine owns temporary ownership
 metadata. A task can be ready, processing, completed, or requeued after an expired
 lease. A lease can be acknowledged or expire; it is not the task itself.
 
+## Task Lifecycle
+
+```text
+READY -> PROCESSING -> ACKED
+READY -> PROCESSING -> EXPIRED -> REQUEUED -> READY
+```
+
+## Component Diagram
+
+```mermaid
+flowchart LR
+    Client["RESP client<br/>redis-cli / Go client"]
+    Server["internal/server<br/>TCP accept loop"]
+    RESP["internal/resp<br/>RESP2 reader/writer"]
+    Protocol["internal/protocol<br/>RESP adapter"]
+    Command["internal/command<br/>Protocol-neutral commands"]
+    Service["internal/service<br/>Multiple named queues"]
+    Core["internal/core<br/>Lease coordination"]
+    Queue["internal/queue<br/>Backend interface"]
+    Memory["MemoryQueue"]
+    Redis["RedisQueue"]
+
+    Client --> Server
+    Server --> RESP
+    Server --> Protocol
+    Protocol --> Command
+    Command --> Service
+    Service --> Core
+    Core --> Queue
+    Queue --> Memory
+    Queue --> Redis
+```
+
+`core.Engine` coordinates one queue. `service.Service` owns the map of queue names
+to engines. Queue backends own task storage; the core engine owns lease metadata and
+expiration scheduling.
+
+See [docs/redis-production-caveats.md](docs/redis-production-caveats.md) before
+using the Redis backend for anything beyond experimentation.
+
 ## Package Map
 
 ```text
@@ -118,8 +158,9 @@ the guarantee: `Fetch` generates the lease ID, passes it to backend `Acquire`,
 then journals before the lease becomes visible; `Ack` completes in the backend
 before it journals. Both orders exist so the crash window falls on the
 recoverable side, and which side that is flips at the moment the work is actually
-done. `docs/failure-matrix.md` enumerates every boundary; `README.md` has the
-short table.
+done. [`docs/failure-matrix.md`](docs/failure-matrix.md) enumerates every
+boundary; [`docs/lease-durability.md`](docs/lease-durability.md) has the short
+table.
 
 A crash between the backend acquire and a durable fetch record leaves a task in
 processing with a lease fence that no WAL record covers. Startup reconciliation
