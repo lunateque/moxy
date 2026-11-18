@@ -16,13 +16,13 @@ import (
 	"time"
 
 	"github.com/redis/go-redis/v9"
-	"github.com/tempoloss/moxy/internal/command"
-	"github.com/tempoloss/moxy/internal/core"
-	"github.com/tempoloss/moxy/internal/queue"
-	"github.com/tempoloss/moxy/internal/reaper"
-	"github.com/tempoloss/moxy/internal/server"
-	"github.com/tempoloss/moxy/internal/service"
-	"github.com/tempoloss/moxy/internal/wal"
+	"github.com/lunateque/moxy/internal/command"
+	"github.com/lunateque/moxy/internal/core"
+	"github.com/lunateque/moxy/internal/queue"
+	"github.com/lunateque/moxy/internal/reaper"
+	"github.com/lunateque/moxy/internal/server"
+	"github.com/lunateque/moxy/internal/service"
+	"github.com/lunateque/moxy/internal/wal"
 )
 
 var version = "dev"

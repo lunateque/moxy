@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/tempoloss/moxy/internal/queue"
-	"github.com/tempoloss/moxy/internal/wal"
+	"github.com/lunateque/moxy/internal/queue"
+	"github.com/lunateque/moxy/internal/wal"
 )
 
 var (

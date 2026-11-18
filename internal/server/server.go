@@ -10,9 +10,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/tempoloss/moxy/internal/command"
-	"github.com/tempoloss/moxy/internal/protocol"
-	"github.com/tempoloss/moxy/internal/resp"
+	"github.com/lunateque/moxy/internal/command"
+	"github.com/lunateque/moxy/internal/protocol"
+	"github.com/lunateque/moxy/internal/resp"
 )
 
 // Config controls the TCP server.

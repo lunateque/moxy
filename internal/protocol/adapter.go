@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/tempoloss/moxy/internal/command"
-	"github.com/tempoloss/moxy/internal/core"
-	"github.com/tempoloss/moxy/internal/resp"
+	"github.com/lunateque/moxy/internal/command"
+	"github.com/lunateque/moxy/internal/core"
+	"github.com/lunateque/moxy/internal/resp"
 )
 
 const pingName = "PING"

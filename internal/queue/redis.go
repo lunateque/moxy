@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/redis/go-redis/v9"
-	"github.com/tempoloss/moxy/internal/task"
+	"github.com/lunateque/moxy/internal/task"
 )
 
 // RedisQueue stores ready and dead tasks in Redis lists, and in-flight tasks in

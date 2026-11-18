@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tempoloss/moxy/internal/queue"
+	"github.com/lunateque/moxy/internal/queue"
 )
 
 func TestFetchCreatesLease(t *testing.T) {

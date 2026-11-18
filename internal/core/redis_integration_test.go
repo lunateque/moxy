@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/redis/go-redis/v9"
-	"github.com/tempoloss/moxy/internal/queue"
+	"github.com/lunateque/moxy/internal/queue"
 )
 
 func TestRedisQueueEngineIntegration(t *testing.T) {

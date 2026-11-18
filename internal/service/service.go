@@ -5,10 +5,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/tempoloss/moxy/internal/core"
-	"github.com/tempoloss/moxy/internal/queue"
-	"github.com/tempoloss/moxy/internal/task"
-	"github.com/tempoloss/moxy/internal/wal"
+	"github.com/lunateque/moxy/internal/core"
+	"github.com/lunateque/moxy/internal/queue"
+	"github.com/lunateque/moxy/internal/task"
+	"github.com/lunateque/moxy/internal/wal"
 )
 
 var (

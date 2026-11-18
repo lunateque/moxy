@@ -49,7 +49,7 @@ jobs:
         if: steps.check.outputs.stale == 'true'
         uses: actions/checkout@v4
         with:
-          repository: tempoloss/tempoloss
+          repository: lunateque/lunateque
           ref: 2010235b0926f23b06b8f7d4e6c2f3a412fe2c33
           path: .primitives-tools
 

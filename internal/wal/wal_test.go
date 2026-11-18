@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tempoloss/moxy/internal/task"
+	"github.com/lunateque/moxy/internal/task"
 )
 
 func fetchRecord(leaseID, taskID string) Record {

@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tempoloss/moxy/internal/resp"
+	"github.com/lunateque/moxy/internal/resp"
 )
 
 func TestRunPrintsVersionAndExitsBeforeListening(t *testing.T) {

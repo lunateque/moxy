@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tempoloss/moxy/internal/core"
+	"github.com/lunateque/moxy/internal/core"
 )
 
 func TestRunStarts(t *testing.T) {

@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tempoloss/moxy/internal/queue"
-	"github.com/tempoloss/moxy/internal/wal"
+	"github.com/lunateque/moxy/internal/queue"
+	"github.com/lunateque/moxy/internal/wal"
 )
 
 // recordingJournal stands in for a real WAL: it keeps every record in order and

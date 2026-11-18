@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tempoloss/moxy/internal/queue"
-	"github.com/tempoloss/moxy/internal/wal"
+	"github.com/lunateque/moxy/internal/queue"
+	"github.com/lunateque/moxy/internal/wal"
 )
 
 var crashMatrixBaseTime = time.Date(2026, 7, 29, 12, 0, 0, 0, time.UTC)
